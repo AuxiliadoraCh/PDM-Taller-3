@@ -62,6 +62,8 @@ class TestUITipCalculator {
 
         composeTestRule.onNodeWithTag("TipText").assertExists().assertIsDisplayed()
 
+        composeTestRule.onNodeWithTag("NumberOfPeopleText").assertExists().assertIsDisplayed()
+
         composeTestRule.onNodeWithTag("TipCheckbox").assertExists().assertIsDisplayed()
 
         composeTestRule.onNodeWithTag("TipPercentageSlider").assertExists().assertIsDisplayed()

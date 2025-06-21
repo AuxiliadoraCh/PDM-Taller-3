@@ -2,19 +2,10 @@
 <project version="4">
   <component name="deploymentTargetSelector">
     <selectionStates>
-      <SelectionState runConfigName="app">
+      <SelectionState runConfigName="TesteableApp.app">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
-      <SelectionState runConfigName="RoundUpPropinaTest">
-        <option name="selectionMode" value="DROPDOWN" />
-      </SelectionState>
-      <SelectionState runConfigName="RoundUpPropinaTest (1)">
-        <option name="selectionMode" value="DROPDOWN" />
-      </SelectionState>
-      <SelectionState runConfigName="tipChangesWhenRoundUpIsChecked()">
-        <option name="selectionMode" value="DROPDOWN" />
-      </SelectionState>
-      <SelectionState runConfigName="tipChangesWhenRoundUpIsChecked() (1)">
+      <SelectionState runConfigName="testOnBillAmountInputChange()">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
     </selectionStates>
