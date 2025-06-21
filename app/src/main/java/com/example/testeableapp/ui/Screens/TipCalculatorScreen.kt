@@ -21,6 +21,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 
@@ -53,16 +54,20 @@ fun TipCalculatorScreen() {
             keyboardOptions = KeyboardOptions.Default.copy(
                 keyboardType = KeyboardType.Number
             ),
-            modifier = Modifier.fillMaxWidth()
+            modifier = Modifier
+                .fillMaxWidth()
+                .testTag("BillAmountInput")
         )
 
-        Text("Porcentaje de propina: $tipPercentage%")
+        Text("Porcentaje de propina: $tipPercentage%", modifier = Modifier.testTag("TipPercentage"))
         Slider(
             value = tipPercentage.toFloat(),
             onValueChange = { tipPercentage = it.toInt() },
             valueRange = 0f..50f,
             steps = 49,
-            modifier = Modifier.fillMaxWidth()
+            modifier = Modifier
+                .fillMaxWidth()
+                .testTag("TipPercentageSlider")
         )
 
         Text("Número de personas: $numberOfPeople")
@@ -86,7 +91,8 @@ fun TipCalculatorScreen() {
         ) {
             Checkbox(
                 checked = roundUp,
-                onCheckedChange = { roundUp = it }
+                onCheckedChange = { roundUp = it },
+                modifier = Modifier.testTag("TipCheckbox")
             )
             Text("Redondear propina", modifier = Modifier.padding(start = 8.dp))
         }
@@ -95,7 +101,8 @@ fun TipCalculatorScreen() {
 
         Text(
             text = "Propina: $${"%.2f".format(tip)}",
-            style = MaterialTheme.typography.headlineSmall
+            style = MaterialTheme.typography.headlineSmall,
+            modifier = Modifier.testTag("TipText")
         )
         Text(
             text = "Total por persona: $${"%.2f".format(totalPerPerson)}",
