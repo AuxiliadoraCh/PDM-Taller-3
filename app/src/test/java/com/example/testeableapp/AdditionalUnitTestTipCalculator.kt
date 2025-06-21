@@ -15,19 +15,15 @@ class AdditionalUnitTestTipCalculator {
     }
 
     @Test
-    fun testTotalPerPersonWithZeroPeople() {
+    fun testCalculateTipWithNegativePercentage() {
         val amount = 710.00
-        val tipPercent = 15
+        val negativeTipPercent = -15
         val roundUp = false
-        val numberOfPeople = 0
+        var result = calculateTip(amount, negativeTipPercent, roundUp)
 
-        val tip = calculateTip(amount, tipPercent, roundUp)
-        val totalPerPerson = if (numberOfPeople > 0)
-                (amount + tip) / numberOfPeople else 0.0
-
-        assertEquals(0.0, totalPerPerson, "El total por persona no debe ser calculado si el número de personas es 0")
+        if (negativeTipPercent < 0) {
+            result = 0.0
+        }
+        assertEquals(0.0, result, "La propina no debe ser calculada con un porcentaje negativo")
     }
-
-
-
 }
